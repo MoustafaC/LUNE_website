@@ -552,9 +552,21 @@ function lune_nu_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'lune_nu_widget_tag_cloud_args' );
 
-/**
- * Implement the Custom Header feature.
- */
+function custom_header_args( $args ) {
+	$args['default-image'] = get_theme_file_uri( '/assets/images/starsmap.jpg' );
+	return $args;
+}
+
+add_filter( 'lune_nu_custom_header_args', 'custom_header_args' );
+
+function theme_menu_class($atts, $item, $args){
+	if ( is_array( $atts) ) {                        
+		$atts['class'] = 'nav-menu-scroll-down'; 
+	}                                                
+	return $atts;
+}
+add_filter('nav_menu_link_attributes','theme_menu_class', 0, 3);
+
 require get_parent_theme_file_path( '/inc/custom-header.php' );
 
 /**

@@ -13,6 +13,7 @@
 		$sidebar = $body.find( '#secondary' ),
 		$entryContent = $body.find( '.entry-content' ),
 		$formatQuote = $body.find( '.format-quote blockquote' ),
+		$navMenuScrollDown = $body.find( '.nav-menu-scroll-down' ),
 		isFrontPage = $body.hasClass( 'lune_nu-front-page' ) || $body.hasClass( 'home blog' ),
 		navigationFixedClass = 'site-navigation-fixed',
 		navigationHeight,
@@ -215,6 +216,30 @@
 		if ( true === supportsFixedBackground() ) {
 			document.documentElement.className += ' background-fixed';
 		}
+	});
+
+	$navMenuScrollDown.click( function( e ) {
+		//grab target URL
+		var url = $(this).attr("href");
+		//get position
+		var index = url.indexOf("#");
+		if(index == -1){
+			return
+		}
+		//extract the target id value
+		var targetId = url.substring(index);
+
+		e.preventDefault();
+		//remove Classes from any menu list items
+		$("a[href*='#']").parent().removeClass("current-menu-item current_page_item");
+		//add classes to current item
+		$(this).closest("li").addClass("current-menu-item current_paage_item");
+
+		//scroll down
+		$( window ).scrollTo( targetId, {
+			duration: 800,
+			offset: { top: menuTop - naviationOuterHeight }
+		});
 	});
 
 	// If navigation menu is present on page, adjust it on scroll and screen resize.
