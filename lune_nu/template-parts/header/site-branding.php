@@ -14,6 +14,8 @@
 
 		<?php the_custom_logo(); ?>
 
+			 <img style="width:auto; height:auto; max-height:420px;" src="http://studioslune.com/wp-content/uploads/2015/04/lune_wo_bg3.gif" />
+
 		<div class="site-branding-text">
 			<?php if ( is_front_page() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
