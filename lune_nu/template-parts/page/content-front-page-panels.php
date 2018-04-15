@@ -29,7 +29,7 @@ global $lune_nucounter;
 
 		<div class="panel-content" id="<?php echo get_post()->post_name; ?>">
 		<div class="wrap">
-			<header class="entry-header">
+			<!--<header class="entry-header">
 				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
 				<?php lune_nu_edit_link( get_the_ID() ); ?>

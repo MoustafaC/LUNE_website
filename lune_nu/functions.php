@@ -195,9 +195,9 @@ function lune_nu_setup() {
 	);
 
 	/**
-	 * Filters LU/NE nÃ¼ array of starter content.
+	 * Filters LU/NE nü array of starter content.
 	 *
-	 * @since LU/NE nÃ¼ 1.1
+	 * @since LU/NE nü 1.1
 	 *
 	 * @param array $starter_content Array of starter content.
 	 */
@@ -236,9 +236,9 @@ function lune_nu_content_width() {
 	}
 
 	/**
-	 * Filter LU/NE nÃ¼ content width of the theme.
+	 * Filter LU/NE nü content width of the theme.
 	 *
-	 * @since LU/NE nÃ¼ 1.0
+	 * @since LU/NE nü 1.0
 	 *
 	 * @param int $content_width Content width in pixels.
 	 */
@@ -278,7 +278,7 @@ function lune_nu_fonts_url() {
 /**
  * Add preconnect for Google Fonts.
  *
- * @since LU/NE nÃ¼ 1.0
+ * @since LU/NE nü 1.0
  *
  * @param array  $urls           URLs to print for resource hints.
  * @param string $relation_type  The relation type the URLs are printed.
@@ -338,7 +338,7 @@ add_action( 'widgets_init', 'lune_nu_widgets_init' );
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
  * a 'Continue reading' link.
  *
- * @since LU/NE nÃ¼ 1.0
+ * @since LU/NE nü 1.0
  *
  * @param string $link Link to single post/page.
  * @return string 'Continue reading' link prepended with an ellipsis.
@@ -362,7 +362,7 @@ add_filter( 'excerpt_more', 'lune_nu_excerpt_more' );
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  *
- * @since LU/NE nÃ¼ 1.0
+ * @since LU/NE nü 1.0
  */
 function lune_nu_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
@@ -411,16 +411,6 @@ function lune_nu_scripts() {
 		wp_enqueue_style( 'lune_nu-colors-dark', get_theme_file_uri( '/assets/css/colors-dark.css' ), array( 'lune_nu-style' ), '1.0' );
 	}
 
-	// Load the Internet Explorer 9 specific stylesheet, to fix display issues in the Customizer.
-	if ( is_customize_preview() ) {
-		wp_enqueue_style( 'lune_nu-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), array( 'lune_nu-style' ), '1.0' );
-		wp_style_add_data( 'lune_nu-ie9', 'conditional', 'IE 9' );
-	}
-
-	// Load the Internet Explorer 8 specific stylesheet.
-	wp_enqueue_style( 'lune_nu-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), array( 'lune_nu-style' ), '1.0' );
-	wp_style_add_data( 'lune_nu-ie8', 'conditional', 'lt IE 9' );
-
 	// Load the html5 shiv.
 	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
@@ -454,7 +444,7 @@ add_action( 'wp_enqueue_scripts', 'lune_nu_scripts' );
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images.
  *
- * @since LU/NE nÃ¼ 1.0
+ * @since LU/NE nü 1.0
  *
  * @param string $sizes A source size value for use in a 'sizes' attribute.
  * @param array  $size  Image size. Accepts an array of width and height
@@ -481,7 +471,7 @@ add_filter( 'wp_calculate_image_sizes', 'lune_nu_content_image_sizes_attr', 10, 
 /**
  * Filter the `sizes` value in the header image markup.
  *
- * @since LU/NE nÃ¼ 1.0
+ * @since LU/NE nü 1.0
  *
  * @param string $html   The HTML image tag markup being filtered.
  * @param object $header The custom header object returned by 'get_custom_header()'.
@@ -500,7 +490,7 @@ add_filter( 'get_header_image_tag', 'lune_nu_header_image_tag', 10, 3 );
  * Add custom image sizes attribute to enhance responsive image functionality
  * for post thumbnails.
  *
- * @since LU/NE nÃ¼ 1.0
+ * @since LU/NE nü 1.0
  *
  * @param array $attr       Attributes for the image markup.
  * @param int   $attachment Image attachment ID.
@@ -521,7 +511,7 @@ add_filter( 'wp_get_attachment_image_attributes', 'lune_nu_post_thumbnail_sizes_
 /**
  * Use front-page.php when Front page displays is set to a static page.
  *
- * @since LU/NE nÃ¼ 1.0
+ * @since LU/NE nü 1.0
  *
  * @param string $template front-page.php.
  *
@@ -536,7 +526,7 @@ add_filter( 'frontpage_template',  'lune_nu_front_page_template' );
  * Modifies tag cloud widget arguments to display all tags in the same font size
  * and use list format for better accessibility.
  *
- * @since LU/NE nÃ¼ 1.4
+ * @since LU/NE nü 1.4
  *
  * @param array $args Arguments for tag cloud widget.
  * @return array The filtered arguments for tag cloud widget.
@@ -604,3 +594,10 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+
+function load_fonts(){
+					wp_register_style('et-googleFonts', 'https://fonts.googleapis.com/css?family=Raleway');
+					wp_enqueue_style('et-googleFonts');
+			}
+	add_action	('wp_print_styles', 'load_fonts');
