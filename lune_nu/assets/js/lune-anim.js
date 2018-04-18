@@ -111,8 +111,8 @@
 	
 	// Get canvas
 	canvas = document.getElementById("luneAnimation");
-	canvas.width = 100;
-	canvas.height = 100;
+	canvas.width = 256;
+	canvas.height = 256;
 	
 	// Create sprite sheet
 	luneImage = new Image();	
@@ -120,16 +120,16 @@
 	// Create sprite
 	lune = sprite({
 		context: canvas.getContext("2d"),
-		width: 1000,
-		height: 100,
+		width: 25856,
+		height: 256,
 		image: luneImage,
-		numberOfFrames: 10,
-		ticksPerFrame: 4
+		numberOfFrames: 101,
+		ticksPerFrame: 2
 	});
 	
 	// Load sprite sheet
 	luneImage.addEventListener("load", gameLoop);
-	luneImage.src = "imgs/luneSheet.png";
+	luneImage.src = "imgs/moon.png";
 
 } ());
 

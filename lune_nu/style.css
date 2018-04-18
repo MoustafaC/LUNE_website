@@ -291,6 +291,16 @@ canvas {
 	display: inline-block;
 }
 
+#luneAnimation {
+	display: block;
+	padding: 3em 0;
+	margin: auto;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
 template {
 	display: none;
 }
@@ -1590,6 +1600,7 @@ body {
 
 .site-title,
 .site-title a {
+	font-family: "Cairo";
 	color: #222;
 	opacity: 1; /* Prevent opacity from changing during selective refreshes in the customize preview */
 }
@@ -3451,6 +3462,7 @@ p > object:only-child {
 	}
 
 	.site-title {
+		font-family: "Cairo";
 		font-size: 36px;
 		font-size: 2.25rem;
 	}
@@ -3505,6 +3517,7 @@ p > object:only-child {
 	}
 
 	.main-navigation {
+		font-family: "Cairo";
 		width: auto;
 	}
 
@@ -3701,6 +3714,7 @@ p > object:only-child {
 	}
 
 	.menu-scroll-down .icon {
+		visibility: hidden;
 		height: 18px;
 		width: 18px;
 	}
