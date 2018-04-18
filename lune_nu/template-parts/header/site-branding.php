@@ -12,7 +12,7 @@
 <div class="site-branding">
 	<div class="wrap">
 
-		<?php the_custom_logo(); ?>
+		<!--<?php the_custom_logo(); ?>-->
 
 			<canvas id="luneAnimation" width="256" height="256"></canvas>
 			<script src="wp-content/themes/lune_nu/assets/js/lune-anim.js"></script>
