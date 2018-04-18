@@ -296,7 +296,8 @@ canvas {
 	padding: 3em 0;
 	margin: auto;
 	position: absolute;
-	bottom: 0;
+	top: auto;
+	bottom: 110%;
 	right: 0;
 	left: 0;
 }
@@ -1429,7 +1430,7 @@ a:hover .nav-title,
 
 /*make the logo in the navigation smaller*/
 .site-navigation-fixed .custom-logo {
-	width: 3rem;
+	width: 2.9rem;
 }
 
 /*.site-navigation-fixed instead of .navigation-top*/
@@ -1440,7 +1441,7 @@ a:hover .nav-title,
 
 @media screen and (max-width: 800px) {
     .site-navigation-logo {
-        display: none
+        display: none;
     }
 }
 
